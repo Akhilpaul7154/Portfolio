@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Link for logo from Boxicon.com-->
+    
+    <style> /*here css starts*/
+
+        body{ /* Body for changing backgound color and content color */
+            background-color: #081b29;
+            color: #ededed;
+        }
+
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo{
+            position: relative;
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .logo::before{ /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: .4s;
+        }
+
+        .navbar a{
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active { /* When mouse hovering or active it works */
+            color: #00abf0;
+        }
+
+        .home{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .home-content {
+            max-width: 500px;
+        }
+
+        .home-content h1 {
+            position: relative;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 0.7;
+        }
+
+        .home-content h1::before{ /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .home-content h3 {
+            position: relative;
+            font-size: 32px;
+            font-weight: 700;
+            color: #00abf0;
+        }
+
+        .home-content h3::before { /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.3s;
+        }
+
+        .home-content p{
+            position: relative;
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .home-content p::before { /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.6s;
+        }
+
+
+        .home-content .btn-box{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+
+        .home-content .btn-box::before { /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 107%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.9s;
+            z-index: 2;
+        }    
+
+        .btn-box a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100%;
+            background-color: #00abf0;
+            border: 2px solid #00abf0;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .btn-box a:hover{ /* When mouse hovering it works */
+            color: #00abf0;
+        }
+
+        .btn-box a:nth-child(2) { /* Here value 2 represnts our second button in btn-box */
+            background-color: transparent;
+            color: #00abf0;
+        }
+
+        .btn-box a:nth-child(2):hover{ /* It also for second button but it works when mouse hovering  */
+            color: #081b29;
+        }
+
+        .btn-box a:nth-child(2)::before{ /* And this for before hovering */
+            background-color: #00abf0;
+        }
+
+        .btn-box a::before{ /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #081b29;
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .btn-box a:hover::before{
+            width: 100%;
+        }
+
+        .home-sci{
+            padding-left: 10%;
+            position: absolute;
+            bottom: 10px;
+            width: 170px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-sci::before { /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 2.5s;
+            z-index: 2;
+        }
+
+
+        .home-sci a{
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 2px solid #00abf0;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #00abf0;
+            text-decoration: none;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .home-sci a:hover{ /* If your cursor on this is it works */
+            color: #081b29;
+        }
+
+        .home-sci a::before{ /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #00abf0;
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .home-sci a:hover::before{ /*  Before hovering */
+            width: 100%;
+        }
+
+        /*KEYFRAMES ANIMATION*/
+        @keyframes showRight {
+            100%{
+                width: 0;
+            }
+        }
+
+        .image {
+            position: relative;
+            display: block;
+            width: 95%;
+            height: 100%;
+            border: 2px solid #081b29;
+            border-radius: 5%;
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            margin-left: 30%;
+        }
+
+        .container:hover .overlay {
+            width:100%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .container::before { /* For Animation */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 2s;
+        }
+        .overlay {
+            position:absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 2px #00abf0;
+            border-radius: 5%;
+            background-color: #00abf0;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .5s ease;
+        }
+
+        .text {
+            white-space: nowrap;
+            color: #081b29;
+            font-size: 40px;
+            position: absolute;
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            text-shadow: 2px 2px 5px #081b29;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--Here we create a Header with a class name header-->
+    <header class="header">
+        <a href="#" class="logo">Murdock.</a> <!--Here we add a logo in header-->
+         
+        <!--Now we create a Navigation bar with class name navbar-->
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header> <!--Here our header is end-->
+
+    <!--Now we create a section for our content with class name home-->
+    <section class="home">
+
+        <!--In this section here is a div element with class name home-content-->
+        <div class="home-content">
+            <h1>Matthew Murdock</h1>
+            <h3>Attorney At Law</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi doloribus facilis nulla distinctio illo possimus molestiae, architecto vitae libero vel. Esse itaque ipsam quibusdam dolore? Totam laboriosam vel corporis.</p>
+
+            <!--Here is an another div element with class name btn-box. In this div we create two buttons.-->
+            <div class="btn-box">
+                <a href="#">Hire Me</a> <!--First Button-->
+                <a href="#">Let's Talk</a> <!--Second Button-->
+            </div>
+
+        </div>
+
+        <!--Now we create an another div element with class name container for Avatar Iamge-->
+        <div class="container">
+            <img src="/Images/Mattt.jpg" alt="Avatar" class="image"> <!--This is a image with alternate text and a class name image-->
+
+            <!--In div container we create an another div for overlaying text with-->
+            <div class="overlay">
+                <div class="text">Matthew Murdock</div> <!--This is a div element with class name text-->
+            </div>
+
+          </div>
+    </section>
+
+    <!--Now we define footer element for other information-->
+    <footer>    
+        <div class="home-sci"> <!--Here we define a div element for some links-->
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+    </footer>    
+</body>
+</html>
